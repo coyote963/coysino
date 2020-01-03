@@ -1,11 +1,11 @@
 
 # IP Address of the host
-ip = '127.0.0.1'
+ip = 'localhost'
 # Gamemode to port mapping
-gamemode_ports = {'dm' : 42070}
+gamemode_ports = { 'b' : 7778,'c' : 7779, 'd' : 7780, 'e' : 7781}
 
 #server rcon password
-password = 'coysino'
+password = 'ur password here'
 
 # set to true for performance, set to false for reliability
 blocking = True

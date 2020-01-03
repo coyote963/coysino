@@ -12,8 +12,6 @@ def exception_handler(type, value, tb):
 sys.excepthook = exception_handler
 
 
-
-
 def get_execute_functionlist(example_functions):
     def execute_functionlist(event_id, message_string, sock):
         for f in example_functions:
@@ -22,13 +20,12 @@ def get_execute_functionlist(example_functions):
 
 if __name__ == "__main__":
     # add in additional gamemodes if hosting multiple servers
-    gamemodes = ['dm']
+    gamemodes = ['b', 'c', 'd', 'e']
     # this holds all the threads
     threaddict = {}
     for mode in gamemodes:
         sock = get_socket(mode)
-        if mode == 'dm':
-            threaddict[mode] = threading.Thread(target = start_parser, args = (sock, get_execute_functionlist(casino_functions)))
+        threaddict[mode] = threading.Thread(target = start_parser, args = (sock, get_execute_functionlist(casino_functions)))
     
     for mode, thread in threaddict.items():
         thread.start()
